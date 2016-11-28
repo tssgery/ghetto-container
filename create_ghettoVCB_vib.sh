@@ -3,6 +3,7 @@
 # www.virtuallyghetto.com
 # Script to build ghettoVCB VIB using VIB Author (can use with lamw/vibauthor Docker Container)
 
+OUTDIR="${OUTDIR:-/root}"
 GVCB_REPO=https://github.com/lamw/ghettoVCB.git
 GVCB_REPO_DIR=ghettoVCB
 GVCB_TEMP_DIR=/tmp/ghettoVCB-$$
@@ -94,7 +95,7 @@ cp ${GVCB_REPO_DIR}/*.conf ${GVCB_CONF_DIR}
 cp ${GVCB_REPO_DIR}/*_template ${GVCB_CONF_DIR}
 
 # Create ghettoVCB VIB + offline bundle
-vibauthor -C -t ${GVCB_TEMP_DIR} -v /output/vghetto-ghettoVCB.vib -O /output/vghetto-ghettoVCB-offline-bundle.zip -f
+vibauthor -C -t ${GVCB_TEMP_DIR} -v "${OUTDIR}/vghetto-ghettoVCB.vib" -O "${OUTDIR}/vghetto-ghettoVCB-offline-bundle.zip" -f
 
 # Remove ghettoVCB temp dir
 rm -rf ${GVCB_TEMP_DIR}
