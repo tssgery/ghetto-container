@@ -4,7 +4,7 @@
 # Script to build ghettoVCB VIB using VIB Author (can use with lamw/vibauthor Docker Container)
 
 OUTDIR="${OUTDIR:-/root}"
-GVCB_REPO=https://github.com/lamw/ghettoVCB.git
+GVCB_REPO=https://github.com/tssgery/ghettoVCB.git
 GVCB_REPO_DIR=ghettoVCB
 GVCB_TEMP_DIR=/tmp/ghettoVCB-$$
 
@@ -54,7 +54,7 @@ cat > ${VIB_DESC_FILE} << __GHETTOVCB__
   <description>${GVCB_COMMIT_HASH}</description>
   <release-date>${GVCB_DATE}</release-date>
   <urls>
-    <url key="ghettoVCB">https://github.com/lamw/ghettoVCB</url>
+    <url key="ghettoVCB">https://github.com/tssgery/ghettoVCB</url>
   </urls>
   <relationships>
     <depends>
